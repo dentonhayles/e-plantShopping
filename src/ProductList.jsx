@@ -280,8 +280,8 @@ const cartItems = useSelector(
                    
                  <div> 
                      <a href="#" onClick={handleCartClick} style={styleA}>
-                         Cart ({cartItems.lenght})
-                     </a>a>
+                         Cart ({cartItems.length})
+                     </a>
                  </div>
             </div>
             {!showCart ? (
@@ -311,31 +311,23 @@ const cartItems = useSelector(
             <p>{plant.cost}</p>
 
             <button
-              className="product-button"
-              onClick={() =>
-                dispatch(
-                  addItem({
-                    id: plant.name
-                    name: plant.name,
-                    image: plant.image,
-                    price: Number(
-                      plant.cost.replace(
-                        "$",
-                        ""
-                      )
-                    ),
-                  })
-                )
-              }
-             disabled={cartItems.some(item => item.id === plant.name)}
-            >
-              {cartItems.some(
-                (item) =>
-                  id: plant.name
-              )
-                ? "Added"
-                : "Add to Cart"}
-            </button>
+  className="product-button"
+  onClick={() =>
+    dispatch(
+     addItem({
+  id: category.category + "-" + index,
+  name: plant.name,
+  image: plant.image,
+  price: Number(plant.cost.replace("$", "")),
+})
+    )
+  }
+disabled={cartItems.some(item => item.id === category.category + "-" + index)}
+>
+  {cartItems.some(item => item.id === plant.name)
+    ? "Added"
+    : "Add to Cart"}
+</button>
           </div>
         ))}
       </div>
